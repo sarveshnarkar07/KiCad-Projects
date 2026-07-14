@@ -8,6 +8,7 @@ A collection of electronics projects designed in [KiCad 10.0](https://www.kicad.
 |---|---------|-------------|
 | 01 | [AC-DC Converter](01%20-%20AC-DC%20Converter/) | Full-wave bridge rectifier with smoothing capacitor and LED indicator |
 | 02 | [Transformerless Power Supply](02%20-%20Transformerless%20Power%20Supply/) | Capacitive dropper power supply with Zener regulation and 5V output |
+| 03 | [Servo Motor Tester](03-%20Servo%20Motor%20Tester/) | NE555-based PWM servo tester with adjustable pulse width |
 
 ### 01 - AC-DC Converter
 
@@ -54,6 +55,31 @@ A capacitive dropper (transformerless) power supply with Zener voltage regulatio
 | J2 | Screw Terminal 2P | DC output connector |
 
 - **Board:** 2-layer, all through-hole components
+- **Designer:** Sarvesh Narkar
+- **Tool:** KiCad 10.0
+
+### 03 - Servo Motor Tester
+
+A simple servo motor tester using the NE555 timer IC. Generates a PWM signal to test and calibrate hobby servo motors.
+
+**Signal path:** 6V DC Input → NE555 Timer → PWM Signal → Servo Output
+
+**Bill of Materials:**
+
+| Ref | Value | Description |
+|-----|-------|-------------|
+| J1 | Pin Header 2P | 6V DC power input connector |
+| U1 | NE555P | Timer IC (DIP-8) |
+| RV1 | 100K | Potentiometer for pulse width adjustment |
+| R1 | 3M3 | Timing resistor |
+| R2 | 56K | Timing resistor |
+| R3 | 1K | LED current limiter |
+| C1 | 22nF | Timing capacitor |
+| D1 | 1N4148 | Clamping diode |
+| D2 | LED | Power indicator |
+| J2 | Pin Header 3P | Servo output (GND, VCC, SIG) |
+
+- **Input:** 6V DC
 - **Designer:** Sarvesh Narkar
 - **Tool:** KiCad 10.0
 
